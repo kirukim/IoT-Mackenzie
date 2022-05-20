@@ -6,6 +6,17 @@ Descrição:
 Medição de temperatura em tempo real a cada 2 segundos. Caso a temperatura fique inferior a 40 graus Celsius, o relê é ativado e liga a lâmpada para aquecer, quando a temperatura atinge 65 graus Celsius o relê é ativado novamente desligando a lâmpada. Realizando o monitoramento da temperatura.
 Os dados de temperatura são enviados via protocolo MQTT. Como o Arduino Uno R3 não possui rede embarcada, utilizamos na comunicação um broker local e as comunicações via porta serial.
 
+Comunicação MQTT:
+Foi criado um Broker em rede local utilizando o MQTTBox de endereço: mqtt://localhost:1883.
+No MQTTBox, criamos um tópico de nome: topic/temp; QoS=0; Payload Type=Strings e realizamos o subscribe no tópico.
+No Node Red, é necessário importar os pallete: node-red-contrib-aedes; node-red-node-arduino respectivamente.
+Pallete node-red-contrib-aedes: Cria a conexão com o nosso broker local através da porta 1883;
+Pallete node-red-node-arduino: Cria as interfaces de comunicação dos PINS do Arduino.
+
+Criamos a interface de entrada de dados através do PIN analógico 0 do Arduino no Node Red, enviamos ao tópico do broker um payload com o data recebido do sensor de temperatura.
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/62429714/169618537-c3c2dd19-d7ea-4461-9531-77abb73722db.png">
+Debug do payload recebido.
+
 Hardware: 
 1. Arduino UNO R3
 2. Protoboard
