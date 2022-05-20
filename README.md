@@ -21,3 +21,6 @@ Plataformas de desenvolvimento:
 1. Arduino.cc - Software Open Source para desenvolvimento e deploy do código para o Arduino, disponível em https://arduino.cc
 2. Node Red - Ferramenta de desenvolvimento baseada em fluxo para programação visual para conectar dispositivos de hardware, APIs e serviços online como parte da Internet das Coisas.
 3. MQTTBox - Programa para criar e testar a conectividade através do protocolo MQTT.
+
+![image](https://user-images.githubusercontent.com/62429714/169617577-1b74bc62-a49b-4642-a5a2-f0a452c917f9.png)
+Visão esquemática do projeto.
