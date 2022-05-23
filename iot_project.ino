@@ -1,28 +1,7 @@
-/*
-   Funcao dos pinos do LCD e ligacoes aos pinos do Arduino
-   LCD RS - pino 12
-   LCD Enable - pino 11
-   LCD D4 - pino 5
-   LCD D5 - pino 4
-   LCD D6 - pino 3
-   LCD D7 - pino 2
-   LCD R/W - GND
-   LCD VSS -  GND
-   LCD VCC - 5V
-   Resistor 330R - Backlight
-
-  A temperatura devera ficar em 38 +/- 1°C
-  Alarme quando > 39°C ou <  37°C
-  Leitura analogica do sensor de temperatura
-  38°C = 180
-*/
-
 // definicao de constantes
 #define sensorTemp A0      // entrada para o sensor de temperatura
 #define regulaTemp A1     // entrada para o potênciometro para regular a a temperatura
 #define brilhoLCD A2      // controle do brilho do LCD
-#define carga 7           // saida para o relê de carga e led indicador
-#define buzzer 8          // saida para alarme sonoro
 #define tempMax 39        // temperatura maxima de operacao
 #define tempMin 37        // temperatura mínima de operacao
 #define tempAlaMax 40     // disparo do alarme quando maior que essa temperatura
@@ -44,7 +23,7 @@
 
 // bliblioteca do sensor de temp
 #include "dht.h"
-// biblioteca de controle do servo
+// biblioteca de controle do servo caso haja
 #include <Servo.h>
 #include <Wire.h>
 #include <Firmata.h>
@@ -761,17 +740,4 @@ void temperatura() {
   tempSensor = analogRead(sensorTemp);
   // converte a temperatura lida
   tempConv = 38 + (tempSensor - 182) * 0.5;
-  // exibe temperatura no LCD
-//  lcd.setCursor(0, 1);
-//  lcd.print("Temp. ");
-//  if (tempConv < 36) {
-//    lcd.print(" < 36 C");
-//  }
-//  if (tempConv > 40) {
-//    lcd.print(" > 40 C");
-//  }
-//  if (tempConv >= 36 && tempConv <= 40) {
-//    lcd.print(tempConv);
-//    lcd.print(" C");
-//  }
-}
+
