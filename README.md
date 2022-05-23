@@ -3,7 +3,7 @@ Projeto de IoT - Mackenzie ADS - 5 Semestre
 Grupo: Kil Hoo Kim, Thiago Gonçalves
 
 Descrição:
-Medição de temperatura em tempo real a cada 2 segundos. Caso a temperatura fique inferior a 40 graus Celsius, o relê é ativado e liga a lâmpada para aquecer, quando a temperatura atinge 65 graus Celsius o relê é ativado novamente desligando a lâmpada. Realizando o monitoramento da temperatura.
+Medição de temperatura em tempo real a cada 2 segundos. Caso a temperatura fique inferior a 36 graus Celsius, o relê é ativado e liga a lâmpada para aquecer, quando a temperatura atinge 40 graus Celsius o relê é ativado novamente desligando a lâmpada. Realizando o monitoramento da temperatura.
 Os dados de temperatura são enviados via protocolo MQTT. Como o Arduino Uno R3 não possui rede embarcada, utilizamos na comunicação um broker local e as comunicações via porta serial.
 
 Comunicação MQTT:
